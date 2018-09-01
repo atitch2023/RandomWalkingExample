@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A94177D120C078E000A5CECC /* BlockNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94177D020C078E000A5CECC /* BlockNode.swift */; };
+		A984A35820A89613009F7CE7 /* GraphScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A984A35720A89613009F7CE7 /* GraphScene.swift */; };
+		A9B9B5DC20A89BD000E9CF7B /* ClickableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B9B5DB20A89BD000E9CF7B /* ClickableNode.swift */; };
+		A9B9B5DE20A8A59D00E9CF7B /* RandomWalker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B9B5DD20A8A59D00E9CF7B /* RandomWalker.swift */; };
 		A9D45FC520A28FFD005D8D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D45FC420A28FFD005D8D72 /* AppDelegate.swift */; };
 		A9D45FC720A28FFD005D8D72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D45FC620A28FFD005D8D72 /* ViewController.swift */; };
 		A9D45FC920A28FFE005D8D72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D45FC820A28FFE005D8D72 /* Assets.xcassets */; };
 		A9D45FCC20A28FFE005D8D72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D45FCA20A28FFE005D8D72 /* Main.storyboard */; };
 		A9D45FD820A28FFE005D8D72 /* RandomWalkingExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D45FD720A28FFE005D8D72 /* RandomWalkingExampleTests.swift */; };
 		A9D45FE320A28FFE005D8D72 /* RandomWalkingExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D45FE220A28FFE005D8D72 /* RandomWalkingExampleUITests.swift */; };
+		A9D45FF320A29106005D8D72 /* KeyMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D45FF220A29106005D8D72 /* KeyMaster.swift */; };
+		A9D45FF520A29157005D8D72 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D45FF420A29157005D8D72 /* Generator.swift */; };
+		A9D745C720A9F001002AB5CC /* SharedVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D745C620A9F001002AB5CC /* SharedVariables.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A94177D020C078E000A5CECC /* BlockNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockNode.swift; sourceTree = "<group>"; };
+		A984A35720A89613009F7CE7 /* GraphScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphScene.swift; path = ../../../.Trash/GraphScene.swift; sourceTree = "<group>"; };
+		A9B9B5DB20A89BD000E9CF7B /* ClickableNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickableNode.swift; sourceTree = "<group>"; };
+		A9B9B5DD20A8A59D00E9CF7B /* RandomWalker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWalker.swift; sourceTree = "<group>"; };
 		A9D45FC120A28FFD005D8D72 /* RandomWalkingExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomWalkingExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D45FC420A28FFD005D8D72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9D45FC620A28FFD005D8D72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +57,9 @@
 		A9D45FDE20A28FFE005D8D72 /* RandomWalkingExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomWalkingExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D45FE220A28FFE005D8D72 /* RandomWalkingExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWalkingExampleUITests.swift; sourceTree = "<group>"; };
 		A9D45FE420A28FFE005D8D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9D45FF220A29106005D8D72 /* KeyMaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyMaster.swift; path = ../../qwerty/qwerty/KeyMaster.swift; sourceTree = "<group>"; };
+		A9D45FF420A29157005D8D72 /* Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Generator.swift; path = ../../qwerty/qwerty/Generator.swift; sourceTree = "<group>"; };
+		A9D745C620A9F001002AB5CC /* SharedVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedVariables.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,12 +110,19 @@
 		A9D45FC320A28FFD005D8D72 /* RandomWalkingExample */ = {
 			isa = PBXGroup;
 			children = (
+				A9D45FF420A29157005D8D72 /* Generator.swift */,
+				A9D45FF220A29106005D8D72 /* KeyMaster.swift */,
+				A984A35720A89613009F7CE7 /* GraphScene.swift */,
 				A9D45FC420A28FFD005D8D72 /* AppDelegate.swift */,
 				A9D45FC620A28FFD005D8D72 /* ViewController.swift */,
 				A9D45FC820A28FFE005D8D72 /* Assets.xcassets */,
 				A9D45FCA20A28FFE005D8D72 /* Main.storyboard */,
 				A9D45FCD20A28FFE005D8D72 /* Info.plist */,
 				A9D45FCE20A28FFE005D8D72 /* RandomWalkingExample.entitlements */,
+				A9B9B5DB20A89BD000E9CF7B /* ClickableNode.swift */,
+				A9B9B5DD20A8A59D00E9CF7B /* RandomWalker.swift */,
+				A9D745C620A9F001002AB5CC /* SharedVariables.swift */,
+				A94177D020C078E000A5CECC /* BlockNode.swift */,
 			);
 			path = RandomWalkingExample;
 			sourceTree = "<group>";
@@ -254,8 +275,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9D745C720A9F001002AB5CC /* SharedVariables.swift in Sources */,
+				A94177D120C078E000A5CECC /* BlockNode.swift in Sources */,
 				A9D45FC720A28FFD005D8D72 /* ViewController.swift in Sources */,
 				A9D45FC520A28FFD005D8D72 /* AppDelegate.swift in Sources */,
+				A9D45FF320A29106005D8D72 /* KeyMaster.swift in Sources */,
+				A9D45FF520A29157005D8D72 /* Generator.swift in Sources */,
+				A9B9B5DC20A89BD000E9CF7B /* ClickableNode.swift in Sources */,
+				A984A35820A89613009F7CE7 /* GraphScene.swift in Sources */,
+				A9B9B5DE20A8A59D00E9CF7B /* RandomWalker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
