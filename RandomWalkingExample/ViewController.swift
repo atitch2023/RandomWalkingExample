@@ -32,7 +32,7 @@ class ViewController: NSViewController {
     }
     
     @IBAction func getNewKey(sender: AnyObject) {
-        sKView.presentScene(SharedVariables.graphScene)
+        SharedVariables.graphScene.populateScene()
     }
     
     @IBAction func toggleSpawningRandomWalkers(sender: AnyObject) {
@@ -45,7 +45,6 @@ class ViewController: NSViewController {
             newWindowFrame.size =  NSSize.init(width: newWindowFrame.size.width, height: newWindowFrame.size.height + (newWindowFrame.size.height * 2.0))
             window.setFrame(newWindowFrame, display: true)
         }
-        
         sKView = SKView.init(frame: NSMakeRect(0.0, controlBarHeight, view.frame.size.width, view.frame.size.height - controlBarHeight))
         view.addSubview(sKView)
         SharedVariables.graphScene.size = sKView.frame.size

@@ -36,18 +36,23 @@ class SharedVariables: NSObject {
     
     static var timeBetweenSpawnedWalkers = TimeInterval(3)
     
-    static let queue = DispatchQueue.global()
+    static let queue = DispatchQueue.global(qos: DispatchQoS.QoSClass.background)
     
     static var originalKey: [[Int]] = []
     
     private static var dynamicKey: [[Int]] = []
     
     static func getDynamicKey() ->[[Int]] {
-        return dynamicKey
+        dynamicKeyLock.lock()
+        let tempDynamicKey = self.dynamicKey
+        dynamicKeyLock.unlock()
+        return tempDynamicKey
     }
     
     static func setDynamicKey(newDynamicKey: [[Int]]) {
+        dynamicKeyLock.lock()
         dynamicKey = newDynamicKey
+        dynamicKeyLock.unlock()
     }
     
     static func changeDynamicKey(position: (x: Int, y: Int), value: Int) {
@@ -86,15 +91,25 @@ class SharedVariables: NSObject {
     private static var walkerPositions = Array<(x: Int, y: Int)>()
     
     static func getWalkerPosition(index: Int) ->(x: Int, y: Int) {
-        return walkerPositions[index]
+        walkerPositionLock.lock()
+        let walkerPosition = walkerPositions[index]
+        walkerPositionLock.unlock()
+        
+        return walkerPosition
     }
     
     static func getWalkerPositionCount() ->Int {
-        return walkerPositions.count
+        walkerPositionLock.lock()
+        let walkerPositionsCount = walkerPositions.count
+        walkerPositionLock.unlock()
+        
+        return walkerPositionsCount
     }
     
     static func addWalkerPosition(newWalkerPosition: (x: Int, y: Int)) {
+        walkerPositionLock.lock()
         walkerPositions.append(newWalkerPosition)
+        walkerPositionLock.unlock()
     }
     
     static func changeWalkerPosition(index: Int, newPosition: (x: Int, y: Int)) {
@@ -110,14 +125,18 @@ class SharedVariables: NSObject {
     
     static func removeWalkerPosition(index: Int) {
         if getWalkerPositionCount() >= index {
-             walkerPositions.remove(at: index)
+            walkerPositionLock.lock()
+            walkerPositions.remove(at: index)
+            walkerPositionLock.unlock()
         } else {
             print("trying to remove walker that does not exist.")
         }
     }
     
     static func removeAllWalkers() {
+        walkerPositionLock.lock()
         walkerPositions.removeAll()
+        walkerPositionLock.unlock()
     }
     
     static let pickUpDuration = 0.3
@@ -143,7 +162,6 @@ class SharedVariables: NSObject {
     static let squish = SKAction.sequence([shrinkWidth, stretchWidth, shrinkHeight, stretchHeight])
     
     static let squishSpin = SKAction.group([squish, spin])
-    
     
     static let sourcePositions: [float2] = [
         float2(0, 1), float2(0.5, 1), float2(1, 1), float2(0, 0.5),float2(0.5, 0.5), float2(1, 0.5), float2(0, 0), float2(0.5, 0), float2(1, 0)

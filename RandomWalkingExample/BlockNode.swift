@@ -12,7 +12,7 @@ import SpriteKit
 class BlockNode: SKSpriteNode {
     var isLowering = false
     var isPickedUp = false
-    var oldZPosition: CGFloat = 0.0
+    private var oldZPosition: CGFloat = 0.0
     
     func enlarge() {
         if let parent = self.parent as! ClickableNode? {
@@ -23,6 +23,7 @@ class BlockNode: SKSpriteNode {
         self.run(SharedVariables.enlarge)
         self.children[0].run(SharedVariables.enlarge)
     }
+    
     func shrink() {
         self.run(SharedVariables.shrink)
         self.children[0].run(SharedVariables.shrink) {

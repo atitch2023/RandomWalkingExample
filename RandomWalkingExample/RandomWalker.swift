@@ -35,8 +35,10 @@ class RandomWalker: NSObject {
     func startStepTimer() {
         stepTimer.invalidate()
         stepTimer = Timer.init(timeInterval: SharedVariables.timeBetweenSteps, target: self, selector: #selector(takeStep), userInfo: nil, repeats: true)
-        RunLoop.current.add(stepTimer, forMode: .commonModes)
-        RunLoop.current.run()
+        RunLoop.main.add(stepTimer, forMode: .commonModes)
+       
+        // RunLoop.current.add(stepTimer, forMode: .commonModes)
+        //  RunLoop.current.run()
     }
     
     @objc func takeStep() {
