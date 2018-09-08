@@ -30,7 +30,7 @@ class BlockNode: SKSpriteNode {
             self.isLowering = false
             self.isPickedUp = false
             if let parent = self.parent as! ClickableNode? {
-                SharedVariables.changeDynamicKey(position: (x: parent.nodeIndices.x, y: parent.nodeIndices.y), value: 2)
+                SharedVariables.changeDynamicKey(position: (x: parent.nodeIndices.x, y: parent.nodeIndices.y), value: 1)
                 parent.tileNodeHolder[0].isHidden = true
             }
             self.zPosition = self.oldZPosition

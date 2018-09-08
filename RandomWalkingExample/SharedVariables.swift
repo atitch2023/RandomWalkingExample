@@ -36,7 +36,9 @@ class SharedVariables: NSObject {
     
     static var timeBetweenSpawnedWalkers = TimeInterval(3)
     
-    static let queue = DispatchQueue.global(qos: DispatchQoS.QoSClass.background)
+   // static let queue = DispatchQueue.global(qos: DispatchQoS.QoSClass.background)
+    
+    static let queue = DispatchQueue.global()
     
     static var originalKey: [[Int]] = []
     
