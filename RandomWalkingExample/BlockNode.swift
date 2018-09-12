@@ -12,12 +12,13 @@ import SpriteKit
 class BlockNode: SKSpriteNode {
     var isLowering = false
     var isPickedUp = false
+    var hasBeenPickedUp = false
     private var oldZPosition: CGFloat = 0.0
     
     func enlarge() {
-        if let parent = self.parent as! ClickableNode? {
-            SharedVariables.changeDynamicKey(position: (x: parent.nodeIndices.x, y: parent.nodeIndices.y), value: 0)
-        }
+//        if let parent = self.parent as! ClickableNode? {
+//            SharedVariables.changeDynamicKey(position: (x: parent.nodeIndices.x, y: parent.nodeIndices.y), value: 0)
+//        }
         oldZPosition = self.zPosition
         self.zPosition = 10000
         self.run(SharedVariables.enlarge)
@@ -37,5 +38,5 @@ class BlockNode: SKSpriteNode {
         }
     }
     
-
+    
 }

@@ -78,10 +78,15 @@ class ClickableNode: SKNode {
     }
     
     func pickUpNode() {
-        blockNodeHolder[0].isPickedUp = true
-        tileNodeHolder[0].isHidden = false
-        let currentBlockNode = blockNodeHolder[0]
-        currentBlockNode.enlarge()
+        if !blockNodeHolder[0].hasBeenPickedUp {
+            blockNodeHolder[0].hasBeenPickedUp = true
+            blockNodeHolder[0].color = NSColor.white
+            blockNodeHolder[0].isPickedUp = true
+            tileNodeHolder[0].isHidden = false
+            let currentBlockNode = blockNodeHolder[0]
+            tileNodeHolder[0].color = NSColor.cyan
+            currentBlockNode.enlarge()
+        }
     }
     
     func setDown(newMasterNode: ClickableNode) {
