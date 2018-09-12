@@ -20,6 +20,26 @@ class ClickableNode: SKNode {
     var blockNodeHolder: [BlockNode] = Array<BlockNode>()
     var tileNodeHolder: [SKSpriteNode] = Array<SKSpriteNode>()
     
+    init(nodeIndices: (x: Int, y: Int), gridSquareSize: NSSize) {
+        super.init()
+        self.nodeIndices = nodeIndices
+        self.isUserInteractionEnabled = true
+        self.name = "masterNode"
+        let tileNode = SKSpriteNode.init(color: NSColor.orange, size: gridSquareSize)
+        tileNode.name = "tileNode"
+        let smallSquareNode = SKSpriteNode.init(color: NSColor.magenta, size: NSSize.init(width: gridSquareSize.width - 4.0, height: gridSquareSize.height - 4.0))
+        smallSquareNode.name = "smallSquareNode"
+        SharedVariables.originalSpriteSize = smallSquareNode.size
+        self.addChild(tileNode)
+        tileNode.addChild(smallSquareNode)
+        smallSquareNode.position = NSPoint.init(x: 1.0, y: 1.0)
+        tileNodeHolder.append(tileNode)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func mouseUp(with event: NSEvent) {
         
         if blockNodeHolder.count == 0 && isAClick {
